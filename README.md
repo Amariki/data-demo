@@ -43,7 +43,7 @@ development environment.
 
 To create your own file, follow these instructions:
 
-1. Rename credentials.yml.tpl to credentials.yml.
+1. Rename `credentials.yml.tpl` to `credentials.yml`.
 2. Register your CampaignChain instance as an app for the various Channels
 listed as `resourceOwner` in `credentials.yml`, such as Twitter and Facebook.
 If you've never done that, go to http://hybridauth.sourceforge.net/userguide.html
