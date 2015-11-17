@@ -1,6 +1,6 @@
 {
     "name": "amariki/data-demo",
-    "description": "Demo data for CampaignChain.",
+    "description": "Sample data that can be used to try CampaignChain or to demo it.",
     "keywords": ["CampaignChain"],
     "homepage": "http://www.campaignchain.com",
     "license": "Apache-2.0",
