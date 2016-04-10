@@ -296,6 +296,16 @@
         channelModule: @module_config_channel_slideshare
         status: active
         trackingId: 3d6704ebc3842c95f656bc5eb2c96e70
+    channel_google_analytics:
+        name: Corporate Google Analytics
+        channelModule: @module_config_channel_google_analytics
+        status: active
+        trackingId: 344fb8f21ab946d0ad1ab9ed2a6ab51a
+    channel_xing:
+        name: CEO on XING
+        channelModule: @module_config_channel_xing
+        status: active
+        trackingId: de66e0e264ac81f82e724872aa600b33
 
 \CampaignChain\CoreBundle\Entity\Location:
     location_facebook_user1:
@@ -365,6 +375,21 @@
         channel: @channel_slideshare
         status: active
         URL: http://www.slideshare.net/amariki_test
+    location_google_analytics_wordpress_amariki_com:
+        name: Corporate Website
+        identifier: UA-70347540-1
+        channel: @channel_google_analytics
+        status: active
+        URL: https://www.google.com/analytics/web/#report/visitors-overview/a70347540w107556750p112044954
+        locationModule: @module_config_location_google_analytics
+    location_xing:
+        name: CEO on XING
+        identifier: 24408169_98529e
+        locationModule: @module_config_location_xing_user
+        image: https://www.xing.com/assets/frontend_minified/img/users/nobody_m.192x192.jpg
+        channel: @channel_xing
+        status: active
+        URL: https://www.xing.com/profile/Amariki_Test
 
 \CampaignChain\Location\FacebookBundle\Entity\User:
     location_facebook_user_user1:
@@ -460,6 +485,29 @@
         identifier: amariki_test
         displayName: amariki_test
         password: amar1k1
+
+\CampaignChain\Location\XingBundle\Entity\XingUser:
+    location_xing_user1:
+        location: @location_xing
+        identifier: amariki_test
+        displayName: CEO on XING
+        firstName: Duke
+        lastName: Ellington
+        email: duke@example.com
+        profileUrl: https://www.xing.com/profile/Amariki_Test
+        profileImageUrl: https://www.xing.com/assets/frontend_minified/img/users/nobody_m.192x192.jpg
+
+\CampaignChain\Location\GoogleAnalyticsBundle\Entity\Profile:
+    location_google_analytics_profile1:
+        location: @location_google_analytics_wordpress_amariki_com
+        identifier: http://wordpress.amariki.com
+        displayName: Corporate Website
+        accountId: 70347540
+        profileId: UA-70347540-1
+        segment: 0
+        metrics:
+            - ga:sessions
+        belongingLocation: @location_website
 
 \CampaignChain\CoreBundle\Entity\Activity:
     # CAMPAIGN 1
@@ -612,6 +660,57 @@
         channel: @channel_linkedin
         location: @location_linkedin
         activityModule: @module_config_activity_linkedin
+        triggerHook: @module_config_hook_due
+        startDate: <dateTimeBetween(@campaign1->startDate, @campaign1->endDate)>
+        status: closed
+        assignee: @fos_user_user*
+    # XING Status Update
+    activity_xing1:
+        name: Announce publishing date of report
+        campaign: @campaign1
+        channel: @channel_xing
+        location: @location_xing
+        activityModule: @module_config_activity_xing
+        triggerHook: @module_config_hook_due
+        startDate: <dateTimeBetween(@campaign1->startDate, @campaign1->endDate)>
+        status: closed
+        assignee: @fos_user_user*
+    activity_xing2:
+        name: Reminder of publishing date
+        campaign: @campaign1
+        channel: @channel_xing
+        location: @location_xing
+        activityModule: @module_config_activity_xing
+        triggerHook: @module_config_hook_due
+        startDate: <dateTimeBetween(@campaign1->startDate, @campaign1->endDate)>
+        status: closed
+        assignee: @fos_user_user*
+    activity_xing3:
+        name: Report was published
+        campaign: @campaign1
+        channel: @channel_xing
+        location: @location_xing
+        activityModule: @module_config_activity_xing
+        triggerHook: @module_config_hook_due
+        startDate: <dateTimeBetween(@campaign1->startDate, @campaign1->endDate)>
+        status: closed
+        assignee: @fos_user_user*
+    activity_xing4:
+        name: Summary of PR Briefing available online
+        campaign: @campaign1
+        channel: @channel_xing
+        location: @location_xing
+        activityModule: @module_config_activity_xing
+        triggerHook: @module_config_hook_due
+        startDate: <dateTimeBetween(@campaign1->startDate, @campaign1->endDate)>
+        status: closed
+        assignee: @fos_user_user*
+    activity_xing5:
+        name: Reminder of report download link
+        campaign: @campaign1
+        channel: @channel_xing
+        location: @location_xing
+        activityModule: @module_config_activity_xing
         triggerHook: @module_config_hook_due
         startDate: <dateTimeBetween(@campaign1->startDate, @campaign1->endDate)>
         status: closed
@@ -770,6 +869,57 @@
         startDate: <dateTimeBetween(@campaign2->startDate, @campaign2->endDate)>
         status: open
         assignee: @fos_user_user*
+    # XING Status Update
+    activity_xing6:
+        name: Invitation for quiz
+        campaign: @campaign2
+        channel: @channel_xing
+        location: @location_xing
+        activityModule: @module_config_activity_xing
+        triggerHook: @module_config_hook_due
+        startDate: <dateTimeBetween(@campaign2->startDate, @campaign2->endDate)>
+        status: open
+        assignee: @fos_user_user*
+    activity_xing7:
+        name: Announce winners of quiz
+        campaign: @campaign2
+        channel: @channel_xing
+        location: @location_xing
+        activityModule: @module_config_activity_xing
+        triggerHook: @module_config_hook_due
+        startDate: <dateTimeBetween(@campaign2->startDate, @campaign2->endDate)>
+        status: open
+        assignee: @fos_user_user*
+    activity_xing8:
+        name: CEO video interview published
+        campaign: @campaign2
+        channel: @channel_xing
+        location: @location_xing
+        activityModule: @module_config_activity_xing
+        triggerHook: @module_config_hook_due
+        startDate: <dateTimeBetween(@campaign2->startDate, @campaign2->endDate)>
+        status: open
+        assignee: @fos_user_user*
+    activity_xing9:
+        name: Announce anniversary discount for online shop
+        campaign: @campaign2
+        channel: @channel_xing
+        location: @location_xing
+        activityModule: @module_config_activity_xing
+        triggerHook: @module_config_hook_due
+        startDate: <dateTimeBetween(@campaign2->startDate, @campaign2->endDate)>
+        status: open
+        assignee: @fos_user_user*
+    activity_xing10:
+        name: Distribute PR
+        campaign: @campaign2
+        channel: @channel_xing
+        location: @location_xing
+        activityModule: @module_config_activity_xing
+        triggerHook: @module_config_hook_due
+        startDate: <dateTimeBetween(@campaign2->startDate, @campaign2->endDate)>
+        status: open
+        assignee: @fos_user_user*
     # CAMPAIGN 3
     # Facebook Status Update
     activity_facebook11:
@@ -920,6 +1070,57 @@
         channel: @channel_linkedin
         location: @location_linkedin
         activityModule: @module_config_activity_linkedin
+        triggerHook: @module_config_hook_due
+        startDate: <dateTimeBetween(@campaign3->startDate, @campaign3->endDate)>
+        status: open
+        assignee: @fos_user_user*
+    # XING Status Update
+    activity_xing11:
+        name: Announce win story press release
+        campaign: @campaign3
+        channel: @channel_xing
+        location: @location_xing
+        activityModule: @module_config_activity_xing
+        triggerHook: @module_config_hook_due
+        startDate: <dateTimeBetween(@campaign3->startDate, @campaign3->endDate)>
+        status: open
+        assignee: @fos_user_user*
+    activity_xing12:
+        name: Point to video interview with client
+        campaign: @campaign3
+        channel: @channel_xing
+        location: @location_xing
+        activityModule: @module_config_activity_xing
+        triggerHook: @module_config_hook_due
+        startDate: <dateTimeBetween(@campaign3->startDate, @campaign3->endDate)>
+        status: open
+        assignee: @fos_user_user*
+    activity_xing13:
+        name: Link to win story media coverage
+        campaign: @campaign3
+        channel: @channel_xing
+        location: @location_xing
+        activityModule: @module_config_activity_xing
+        triggerHook: @module_config_hook_due
+        startDate: <dateTimeBetween(@campaign3->startDate, @campaign3->endDate)>
+        status: open
+        assignee: @fos_user_user*
+    activity_xing14:
+        name: Testimonial by client
+        campaign: @campaign3
+        channel: @channel_xing
+        location: @location_xing
+        activityModule: @module_config_activity_xing
+        triggerHook: @module_config_hook_due
+        startDate: <dateTimeBetween(@campaign3->startDate, @campaign3->endDate)>
+        status: open
+        assignee: @fos_user_user*
+    activity_xing15:
+        name: Take aways for vertical
+        campaign: @campaign3
+        channel: @channel_xing
+        location: @location_xing
+        activityModule: @module_config_activity_xing
         triggerHook: @module_config_hook_due
         startDate: <dateTimeBetween(@campaign3->startDate, @campaign3->endDate)>
         status: open
@@ -1104,6 +1305,57 @@
         startDate: <dateTimeBetween(@campaign4->startDate, @campaign4->endDate)>
         status: open
         assignee: @fos_user_user*
+    # XING Status Update
+    activity_xing16:
+        name: Announce upcoming product release date
+        campaign: @campaign4
+        channel: @channel_xing
+        location: @location_xing
+        activityModule: @module_config_activity_xing
+        triggerHook: @module_config_hook_due
+        startDate: <dateTimeBetween(@campaign4->startDate, @campaign4->endDate)>
+        status: open
+        assignee: @fos_user_user*
+    activity_xing17:
+        name: Sneak preview of new product with photo
+        campaign: @campaign4
+        channel: @channel_xing
+        location: @location_xing
+        activityModule: @module_config_activity_xing
+        triggerHook: @module_config_hook_due
+        startDate: <dateTimeBetween(@campaign4->startDate, @campaign4->endDate)>
+        status: open
+        assignee: @fos_user_user*
+    activity_xing18:
+        name: New product is available now
+        campaign: @campaign4
+        channel: @channel_xing
+        location: @location_xing
+        activityModule: @module_config_activity_xing
+        triggerHook: @module_config_hook_due
+        startDate: <dateTimeBetween(@campaign4->startDate, @campaign4->endDate)>
+        status: open
+        assignee: @fos_user_user*
+    activity_xing19:
+        name: Highlight new features
+        campaign: @campaign4
+        channel: @channel_xing
+        location: @location_xing
+        activityModule: @module_config_activity_xing
+        triggerHook: @module_config_hook_due
+        startDate: <dateTimeBetween(@campaign4->startDate, @campaign4->endDate)>
+        status: open
+        assignee: @fos_user_user*
+    activity_xing20:
+        name: Behind the scenes video
+        campaign: @campaign4
+        channel: @channel_xing
+        location: @location_xing
+        activityModule: @module_config_activity_xing
+        triggerHook: @module_config_hook_due
+        startDate: <dateTimeBetween(@campaign4->startDate, @campaign4->endDate)>
+        status: open
+        assignee: @fos_user_user*
     # CAMPAIGN TEMPLATE 1
     # Facebook Status Update
     activity_facebook21:
@@ -1258,6 +1510,57 @@
         startDate: <dateTimeBetween(@campaign_template1->startDate, @campaign_template1->endDate)>
         status: paused
         assignee: @fos_user_user*
+    # XING Status Update
+    activity_xing21:
+        name: Announce event date
+        campaign: @campaign_template1
+        channel: @channel_xing
+        location: @location_xing
+        activityModule: @module_config_activity_xing
+        triggerHook: @module_config_hook_due
+        startDate: <dateTimeBetween(@campaign_template1->startDate, @campaign_template1->endDate)>
+        status: paused
+        assignee: @fos_user_user*
+    activity_xing22:
+        name: Call for Papers now open
+        campaign: @campaign_template1
+        channel: @channel_xing
+        location: @location_xing
+        activityModule: @module_config_activity_xing
+        triggerHook: @module_config_hook_due
+        startDate: <dateTimeBetween(@campaign_template1->startDate, @campaign_template1->endDate)>
+        status: paused
+        assignee: @fos_user_user*
+    activity_xing23:
+        name: Conference schedule is online
+        campaign: @campaign_template1
+        channel: @channel_xing
+        location: @location_xing
+        activityModule: @module_config_activity_xing
+        triggerHook: @module_config_hook_due
+        startDate: <dateTimeBetween(@campaign_template1->startDate, @campaign_template1->endDate)>
+        status: paused
+        assignee: @fos_user_user*
+    activity_xing24:
+        name: Announce keynote speakers
+        campaign: @campaign_template1
+        channel: @channel_xing
+        location: @location_xing
+        activityModule: @module_config_activity_xing
+        triggerHook: @module_config_hook_due
+        startDate: <dateTimeBetween(@campaign_template1->startDate, @campaign_template1->endDate)>
+        status: paused
+        assignee: @fos_user_user*
+    activity_xing25:
+        name: Early bird tickets available
+        campaign: @campaign_template1
+        channel: @channel_xing
+        location: @location_xing
+        activityModule: @module_config_activity_xing
+        triggerHook: @module_config_hook_due
+        startDate: <dateTimeBetween(@campaign_template1->startDate, @campaign_template1->endDate)>
+        status: paused
+        assignee: @fos_user_user*
     # REPEATING CAMPAIGN 1
     # Facebook Status Update
     activity_facebook26:
@@ -1408,6 +1711,57 @@
         channel: @channel_linkedin
         location: @location_linkedin
         activityModule: @module_config_activity_linkedin
+        triggerHook: @module_config_hook_due
+        startDate: <dateTimeBetween(@campaign_repeating1->startDate, @campaign_repeating1->endDate)>
+        status: paused
+        assignee: @fos_user_user*
+    # XING Status Update
+    activity_xing26:
+        name: Link to product manuals
+        campaign: @campaign_repeating1
+        channel: @channel_xing
+        location: @location_xing
+        activityModule: @module_config_activity_xing
+        triggerHook: @module_config_hook_due
+        startDate: <dateTimeBetween(@campaign_repeating1->startDate, @campaign_repeating1->endDate)>
+        status: paused
+        assignee: @fos_user_user*
+    activity_xing27:
+        name: Link to Whitepapers
+        campaign: @campaign_repeating1
+        channel: @channel_xing
+        location: @location_xing
+        activityModule: @module_config_activity_xing
+        triggerHook: @module_config_hook_due
+        startDate: <dateTimeBetween(@campaign_repeating1->startDate, @campaign_repeating1->endDate)>
+        status: paused
+        assignee: @fos_user_user*
+    activity_xing28:
+        name: Link to Webinar recordings
+        campaign: @campaign_repeating1
+        channel: @channel_xing
+        location: @location_xing
+        activityModule: @module_config_activity_xing
+        triggerHook: @module_config_hook_due
+        startDate: <dateTimeBetween(@campaign_repeating1->startDate, @campaign_repeating1->endDate)>
+        status: paused
+        assignee: @fos_user_user*
+    activity_xing29:
+        name: Link to support page
+        campaign: @campaign_repeating1
+        channel: @channel_xing
+        location: @location_xing
+        activityModule: @module_config_activity_xing
+        triggerHook: @module_config_hook_due
+        startDate: <dateTimeBetween(@campaign_repeating1->startDate, @campaign_repeating1->endDate)>
+        status: paused
+        assignee: @fos_user_user*
+    activity_xing30:
+        name: Link to product videos
+        campaign: @campaign_repeating1
+        channel: @channel_xing
+        location: @location_xing
+        activityModule: @module_config_activity_xing
         triggerHook: @module_config_hook_due
         startDate: <dateTimeBetween(@campaign_repeating1->startDate, @campaign_repeating1->endDate)>
         status: paused

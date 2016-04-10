@@ -450,6 +450,83 @@
         type: campaignchain-security
         path: vendor/campaignchain/security-authentication-server-oauth
         class: "CampaignChain\Security\Authentication\Server\OAuthBundle\CampaignChainSecurityAuthenticationServerOAuthBundle"
+    bundle_channel_google_analytics:
+        name: campaignchain/channel-google-analytics
+        description: Connect with Google Analytics
+        license: Apache-2.0
+        authors:
+            name: CampaignChain, Inc.
+            email: info@campaignchain.com
+        homepage: http://www.campaignchain.com
+        type: campaignchain-channel
+        path: vendor/campaignchain/channel-google-analytics
+        class: "CampaignChain\Channel\GoogleAnalyticsBundle\CampaignChainChannelGoogleAnalyticsBundle"
+    bundle_location_google_analytics:
+        name: campaignchain/location-google-analytics
+        description: Google Analytics Integration
+        license: Apache-2.0
+        authors:
+            name: CampaignChain, Inc.
+            email: info@campaignchain.com
+        homepage: http://www.campaignchain.com
+        type: campaignchain-location
+        path: vendor/campaignchain/location-google-analytics
+        class: "CampaignChain\Location\GoogleAnalyticsBundle\CampaignChainLocationGoogleAnalyticsBundle"
+    bundle_report_google_analytics:
+        name: campaignchain/report-google-analytics
+        description: Access Google Analytics Data
+        license: Apache-2.0
+        authors:
+            name: CampaignChain, Inc.
+            email: info@campaignchain.com
+        homepage: http://www.campaignchain.com
+        type: campaignchain-report
+        path: vendor/campaignchain/report-google-analytics
+        class: "CampaignChain\Report\GoogleAnalyticsBundle\CampaignChainReportGoogleAnalyticsBundle"
+    bundle_channel_xing:
+        name: campaignchain/channel-xing
+        description: Connect with Xing.
+        license: Apache-2.0
+        authors:
+            name: CampaignChain, Inc.
+            email: info@campaignchain.com
+        homepage: http://www.campaignchain.com
+        type: campaignchain-channel
+        path: vendor/campaignchain/channel-xing
+        class: "CampaignChain\Channel\XingBundle\CampaignChainChannelXingBundle"
+    bundle_location_xing:
+        name: campaignchain/location-xing
+        description: Holds information about a Xing user.
+        license: Apache-2.0
+        authors:
+            name: CampaignChain, Inc.
+            email: info@campaignchain.com
+        homepage: http://www.campaignchain.com
+        type: campaignchain-location
+        path: vendor/campaignchain/location-xing
+        class: "CampaignChain\Location\XingBundle\CampaignChainLocationXingBundle"
+    bundle_activity_xing:
+        name: campaignchain/activity-xing
+        description: Post a message on Xing.
+        license: Apache-2.0
+        authors:
+            name: CampaignChain, Inc.
+            email: info@campaignchain.com
+        homepage: http://www.campaignchain.com
+        type: campaignchain-activity
+        path: vendor/campaignchain/activity-xing
+        class: "CampaignChain\Activity\XingBundle\CampaignChainActivityXingBundle"
+    bundle_operation_xing:
+        name: campaignchain/operation-xing
+        description: Post a message on Xing.
+        license: Apache-2.0
+        authors:
+            name: CampaignChain, Inc.
+            email: info@campaignchain.com
+        homepage: http://www.campaignchain.com
+        type: campaignchain-operation
+        path: vendor/campaignchain/operation-xing
+        class: "CampaignChain\Operation\XingBundle\CampaignChainOperationXingBundle"
 
 \CampaignChain\CoreBundle\Entity\Hook:
     module_config_hook_due:
@@ -545,6 +622,20 @@
         displayName: 'SlideShare'
         routes:
             new: campaignchain_channel_slideshare_create
+    module_config_channel_google_analytics:
+        bundle: @bundle_channel_google_analytics
+        identifier: campaignchain-google-analytics
+        description: Provides a channel for Google Analytics
+        displayName: 'Google Analytics'
+        routes:
+            new: campaignchain_channel_ezplatform_new
+    module_config_channel_xing:
+        bundle: @bundle_channel_xing
+        identifier: campaignchain-xing
+        description: Connects to Xing.
+        displayName: 'Xing'
+        routes:
+            new: campaignchain_channel_xing_create
 
 \CampaignChain\CoreBundle\Entity\LocationModule:
     module_config_location_twitter_user:
@@ -613,6 +704,16 @@
         identifier: campaignchain-slideshare-user
         displayName: 'SlideShare'
         description: Holds information about a SlideShare user.
+    module_config_location_google_analytics:
+        bundle: @bundle_location_google_analytics
+        identifier: campaignchain-google-analytics
+        displayName: 'Google Analytics Property'
+        description: Shows analytics data for a selected web property.
+    module_config_location_xing_user:
+        bundle: @bundle_location_xing
+        identifier: campaignchain-xing
+        displayName: 'Xing'
+        description: Holds information about a Xing user.
 
 \CampaignChain\CoreBundle\Entity\CampaignModule:
     module_config_campaign_scheduled:
@@ -813,7 +914,23 @@
         hooks:
             default:
                 campaignchain-due: true
-            
+    module_config_activity_xing:
+        bundle: @bundle_activity_xing
+        channelModules:
+            - @module_config_channel_xing
+        identifier: campaignchain-xing
+        displayName: 'Post message on Xing'
+        routes:
+            new: campaignchain_activity_xing_new
+            edit: campaignchain_activity_xing_edit
+            edit_modal: campaignchain_activity_xing_edit_modal
+            edit_api: campaignchain_activity_xing_edit_api
+            read: campaignchain_activity_xing_read
+        hooks:
+            default:
+                campaignchain-due: true
+                campaignchain-assignee: true
+
 \CampaignChain\CoreBundle\Entity\OperationModule:
     module_config_operation_facebook:
         bundle: @bundle_operation_facebook
@@ -873,7 +990,17 @@
             report: campaignchain.job.report.slideshare.publish_slideshow
         params:
             owns_location: true
-            
+    module_config_operation_xing:
+        bundle: @bundle_operation_xing
+        identifier: campaignchain-xing-message
+        displayName: 'Post message on Xing'
+        description: This module posts a message on Xing
+        services:
+            job: campaignchain.job.operation.xing.message
+            report: campaignchain.job.report.xing.message
+        params:
+            owns_location: true
+
 \CampaignChain\CoreBundle\Entity\ReportModule:
     module_config_cta_tracking_per_location:
         identifier: campaignchain-analytics-cta-tracking-per-location
@@ -889,6 +1016,13 @@
         bundle: @bundle_report_analytics_metrics_per_activity
         routes:
             index: campaignchain_report_analytics_metrics_per_activity_index
+    module_config_google_analytics:
+        identifier: campaignchain-google-analytics
+        displayName: Google Analytics
+        description: Report Data from Google Analytics
+        bundle: @bundle_report_google_analytics
+        routes:
+            index: campaignchain_report_google_analytics_index
 
 \CampaignChain\CoreBundle\Entity\SecurityModule:
     module_config_security_authentication_client_oauth:
