@@ -45,7 +45,8 @@
 
 \CampaignChain\CoreBundle\Entity\Campaign:
     campaign1:
-        name: Financial Report
+        name: Annual Financial Report
+        description: Announcing the detailed annual income statement, cashflow statement, and balance sheet for our company, including revenue, expenses, profit, cash, assets, liabilities, shareholder’s equity and more for the lastest fiscal year.
         timezone: <timezone()>
         campaignModule: @module_config_campaign_scheduled
         triggerHook: @module_config_hook_duration
@@ -55,6 +56,7 @@
         assignee: @fos_user_user*
     campaign2:
         name: Company Anniversary
+        description: We'll utilize our 10th corporate anniversary to communicate with our audience – clients, prospects, employees, and beyond – to share our story. It’s a chance to talk about why we started our business in the first place, where we’ve been, what we do, and what makes us different and an opportunity to thank employees and clients who’ve helped us reach this milestone.
         timezone: <timezone()>
         campaignModule: @module_config_campaign_scheduled
         triggerHook: @module_config_hook_duration
@@ -64,6 +66,7 @@
         assignee: @fos_user_user*
     campaign3:
         name: Customer Win Story
+        description: In this case study campaign we share the wins of a client using our innovative products and solutions to achieve business victories.
         timezone: <timezone()>
         campaignModule: @module_config_campaign_scheduled
         triggerHook: @module_config_hook_duration
@@ -73,6 +76,7 @@
         assignee: @fos_user_user*
     campaign4:
         name: Product Release
+        description: This product release is the launch of a new product. For our customers, it's a promise of new value they can look forward to embedding in their everyday work and activities.
         timezone: <timezone()>
         campaignModule: @module_config_campaign_scheduled
         triggerHook: @module_config_hook_duration
@@ -91,6 +95,7 @@
         assignee: @fos_user_user*
     campaign_template1:
         name: Annual Corporate Conference Template
+        description: Our international event is the most informative and dynamic conference in our industry, with many speakers and expert presentations.
         timezone: <timezone()>
         campaignModule: @module_config_campaign_template
         triggerHook: @module_config_hook_timespan
@@ -101,6 +106,7 @@
         assignee: @fos_user_user*
     campaign_repeating1:
         name: Collateral Reminders
+        description: In this campaign, we hint our audience at information which is always available on our Website or other online channels.
         timezone: <timezone()>
         campaignModule: @module_config_campaign_repeating
         triggerHook: @module_config_hook_date_repeat
