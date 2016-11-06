@@ -66,6 +66,7 @@
 \CampaignChain\CoreBundle\Entity\Campaign:
     campaign1:
         name: Financial Report
+        description: <text(100)>
         timezone: <timezone()>
         campaignModule: @module_config_campaign_scheduled
         triggerHook: @module_config_hook_duration
@@ -75,6 +76,7 @@
         assignee: @fos_user_user*
     campaign2:
         name: Company Anniversary
+        description: <text(100)>
         timezone: <timezone()>
         campaignModule: @module_config_campaign_scheduled
         triggerHook: @module_config_hook_duration
@@ -84,6 +86,7 @@
         assignee: @fos_user_user*
     campaign3:
         name: Customer Win Story
+        description: <text(100)>
         timezone: <timezone()>
         campaignModule: @module_config_campaign_scheduled
         triggerHook: @module_config_hook_duration
@@ -93,6 +96,7 @@
         assignee: @fos_user_user*
     campaign4:
         name: Product Release
+        description: <text(100)>
         timezone: <timezone()>
         campaignModule: @module_config_campaign_scheduled
         triggerHook: @module_config_hook_duration
@@ -111,6 +115,7 @@
         assignee: @fos_user_user*
     campaign_template1:
         name: Annual Corporate Conference Template
+        description: <text(100)>
         timezone: <timezone()>
         campaignModule: @module_config_campaign_template
         triggerHook: @module_config_hook_timespan
