@@ -150,58 +150,58 @@
         activity: @activity_facebook1
         campaign: @campaign1
         metric: @activity_metric_facebook_likes
-        value: <numberBetween(100, 10000)>
+        value: <numberBetween(8000, 10000)>
         time: @activity_facebook1->startDate
     activity_fact_facebook{2..10}:
         activity: @activity_facebook1
         campaign: @campaign1
         metric: @activity_metric_facebook_likes
-        value: <numberBetween(100, 10000)>
+        value: <numberBetween(8000, 10000)>
         time: <dateTimeBetween(@activity_facebook1->startDate, @campaign1->endDate)>
     activity_fact_facebook{11..20}:
         activity: @activity_facebook1
         campaign: @campaign1
         metric: @activity_metric_facebook_comments
-        value: <numberBetween(100, 10000)>
+        value: <numberBetween(8000, 10000)>
         time: <dateTimeBetween(@activity_facebook1->startDate, @campaign1->endDate)>
     # Campaign 1, Activity 2, Facebook, Metric 1
     activity_fact_facebook{51..60}:
         activity: @activity_facebook2
         campaign: @campaign1
         metric: @activity_metric_facebook_likes
-        value: <numberBetween(100, 10000)>
+        value: <numberBetween(8000, 10000)>
         time: <dateTimeBetween(@activity_facebook2->startDate, @campaign1->endDate)>
     activity_fact_facebook{61..70}:
         activity: @activity_facebook2
         campaign: @campaign1
         metric: @activity_metric_facebook_comments
-        value: <numberBetween(100, 10000)>
+        value: <numberBetween(8000, 10000)>
         time: <dateTimeBetween(@activity_facebook2->startDate, @campaign1->endDate)>
     # Campaign 1, Activity 3, Facebook, Metric 1
     activity_fact_facebook{101..110}:
         activity: @activity_facebook3
         campaign: @campaign1
         metric: @activity_metric_facebook_likes
-        value: <numberBetween(100, 10000)>
+        value: <numberBetween(8000, 10000)>
         time: <dateTimeBetween(@activity_facebook3->startDate, @campaign1->endDate)>
     activity_fact_facebook{111..120}:
         activity: @activity_facebook3
         campaign: @campaign1
         metric: @activity_metric_facebook_comments
-        value: <numberBetween(100, 10000)>
+        value: <numberBetween(8000, 10000)>
         time: <dateTimeBetween(@activity_facebook3->startDate, @campaign1->endDate)>
     # Campaign 1, Activity 4, Facebook, Metric 1
     activity_fact_facebook{151..160}:
         activity: @activity_facebook4
         campaign: @campaign1
         metric: @activity_metric_facebook_likes
-        value: <numberBetween(100, 10000)>
+        value: <numberBetween(8000, 10000)>
         time: <dateTimeBetween(@activity_facebook4->startDate, @campaign1->endDate)>
     activity_fact_facebook{161..170}:
         activity: @activity_facebook4
         campaign: @campaign1
         metric: @activity_metric_facebook_comments
-        value: <numberBetween(100, 10000)>
+        value: <numberBetween(8000, 10000)>
         time: <dateTimeBetween(@activity_facebook4->startDate, @campaign1->endDate)>
 
 \CampaignChain\CoreBundle\Entity\ReportAnalyticsLocationMetric:
@@ -213,33 +213,33 @@
         bundle: @bundle_operation_facebook->name
 
 \CampaignChain\CoreBundle\Entity\ReportAnalyticsLocationFact:
-    channel_fact_facebook{1..10}:
+    location_fact_facebook{1..10}:
         location: @location_facebook_page
         metric: @location_metric_facebook_likes
-        value: <numberBetween(100, 10000)>
+        value: <numberBetween(8000, 10000)>
         time: <dateTimeBetween(@campaign1->startDate, @campaign1->endDate)>
-    channel_fact_facebook{11..20}:
+    location_fact_facebook{11..20}:
         location: @location_facebook_page
         metric: @location_metric_facebook_likes
-        value: <numberBetween(100, 10000)>
+        value: <numberBetween(8000, 10000)>
         time: <dateTimeBetween(@campaign2->startDate, @campaign2->endDate)>
-    channel_fact_facebook{21..30}:
+    location_fact_facebook{21..30}:
         location: @location_facebook_page
         metric: @location_metric_facebook_likes
-        value: <numberBetween(100, 10000)>
+        value: <numberBetween(8000, 10000)>
         time: <dateTimeBetween(@campaign3->startDate, @campaign3->endDate)>
-    channel_fact_twitter{1..10}:
+    location_fact_twitter{1..10}:
         location: @location_twitter
         metric: @location_metric_twitter_followers
-        value: <numberBetween(100, 10000)>
+        value: <numberBetween(8000, 10000)>
         time: <dateTimeBetween(@campaign1->startDate, @campaign1->endDate)>
-    channel_fact_twitter{11..20}:
+    location_fact_twitter{11..20}:
         location: @location_twitter
         metric: @location_metric_twitter_followers
-        value: <numberBetween(100, 10000)>
+        value: <numberBetween(8000, 10000)>
         time: <dateTimeBetween(@campaign2->startDate, @campaign2->endDate)>
-    channel_fact_twitter{21..30}:
+    location_fact_twitter{21..30}:
         location: @location_twitter
         metric: @location_metric_twitter_followers
-        value: <numberBetween(100, 10000)>
+        value: <numberBetween(8000, 10000)>
         time: <dateTimeBetween(@campaign3->startDate, @campaign3->endDate)>
