@@ -12,10 +12,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+parameters:
+    facebook_privacy:
+        - 'EVERYONE'
+        - 'ALL_FRIENDS'
+        - 'FRIENDS_OF_FRIENDS'
+        - 'SELF'
+
 \CampaignChain\Operation\FacebookBundle\Entity\UserStatus:
     status_facebook{1..30}:
         message: <text(1000)> <url()>
-        privacy: <randomElement(['EVERYONE','ALL_FRIENDS','FRIENDS_OF_FRIENDS','SELF'])>
+        privacy: <randomElement(<{facebook_privacy}>)>
         operation: "@operation_facebook<current()>"
         facebookLocation: "@location_facebook_user_user1"
 
@@ -55,6 +62,7 @@
         activity: "@activity_gotowebinar1"
         startDate: "@activity_gotowebinar1->startDate"
         triggerHook: "@activity_gotowebinar1->triggerHook"
+
     # MailChimp
     operation_mailchimp1:
         operationModule: "@module_config_operation_mailchimp"
@@ -62,32 +70,732 @@
         activity: "@activity_mailchimp1"
         startDate: "@activity_mailchimp1->startDate"
         triggerHook: "@activity_mailchimp1->triggerHook"
+
     # Facebook Status Update
-    operation_facebook{1..30}:
+    operation_facebook1:
         operationModule: "@module_config_operation_facebook"
-        name: "@activity_facebook<current()>->name"
-        activity: "@activity_facebook<current()>"
-        startDate: "@activity_facebook<current()>->startDate"
-        triggerHook: "@activity_facebook<current()>->triggerHook"
+        name: "@activity_facebook1->name"
+        activity: "@activity_facebook1"
+        startDate: "@activity_facebook1->startDate"
+        triggerHook: "@activity_facebook1->triggerHook"
+    operation_facebook2:
+        operationModule: "@module_config_operation_facebook"
+        name: "@activity_facebook2->name"
+        activity: "@activity_facebook2"
+        startDate: "@activity_facebook2->startDate"
+        triggerHook: "@activity_facebook2->triggerHook"
+    operation_facebook3:
+        operationModule: "@module_config_operation_facebook"
+        name: "@activity_facebook3->name"
+        activity: "@activity_facebook3"
+        startDate: "@activity_facebook3->startDate"
+        triggerHook: "@activity_facebook3->triggerHook"
+    operation_facebook4:
+        operationModule: "@module_config_operation_facebook"
+        name: "@activity_facebook4->name"
+        activity: "@activity_facebook4"
+        startDate: "@activity_facebook4->startDate"
+        triggerHook: "@activity_facebook4->triggerHook"
+    operation_facebook5:
+        operationModule: "@module_config_operation_facebook"
+        name: "@activity_facebook5->name"
+        activity: "@activity_facebook5"
+        startDate: "@activity_facebook5->startDate"
+        triggerHook: "@activity_facebook5->triggerHook"
+    operation_facebook6:
+        operationModule: "@module_config_operation_facebook"
+        name: "@activity_facebook6->name"
+        activity: "@activity_facebook6"
+        startDate: "@activity_facebook6->startDate"
+        triggerHook: "@activity_facebook6->triggerHook"
+    operation_facebook7:
+        operationModule: "@module_config_operation_facebook"
+        name: "@activity_facebook7->name"
+        activity: "@activity_facebook7"
+        startDate: "@activity_facebook7->startDate"
+        triggerHook: "@activity_facebook7->triggerHook"
+    operation_facebook8:
+        operationModule: "@module_config_operation_facebook"
+        name: "@activity_facebook8->name"
+        activity: "@activity_facebook8"
+        startDate: "@activity_facebook8->startDate"
+        triggerHook: "@activity_facebook8->triggerHook"
+    operation_facebook9:
+        operationModule: "@module_config_operation_facebook"
+        name: "@activity_facebook9->name"
+        activity: "@activity_facebook9"
+        startDate: "@activity_facebook9->startDate"
+        triggerHook: "@activity_facebook9->triggerHook"
+    operation_facebook10:
+        operationModule: "@module_config_operation_facebook"
+        name: "@activity_facebook10->name"
+        activity: "@activity_facebook10"
+        startDate: "@activity_facebook10->startDate"
+        triggerHook: "@activity_facebook10->triggerHook"
+    operation_facebook11:
+        operationModule: "@module_config_operation_facebook"
+        name: "@activity_facebook11->name"
+        activity: "@activity_facebook11"
+        startDate: "@activity_facebook11->startDate"
+        triggerHook: "@activity_facebook11->triggerHook"
+    operation_facebook12:
+        operationModule: "@module_config_operation_facebook"
+        name: "@activity_facebook12->name"
+        activity: "@activity_facebook12"
+        startDate: "@activity_facebook12->startDate"
+        triggerHook: "@activity_facebook12->triggerHook"
+    operation_facebook13:
+        operationModule: "@module_config_operation_facebook"
+        name: "@activity_facebook13->name"
+        activity: "@activity_facebook13"
+        startDate: "@activity_facebook13->startDate"
+        triggerHook: "@activity_facebook13->triggerHook"
+    operation_facebook14:
+        operationModule: "@module_config_operation_facebook"
+        name: "@activity_facebook14->name"
+        activity: "@activity_facebook14"
+        startDate: "@activity_facebook14->startDate"
+        triggerHook: "@activity_facebook14->triggerHook"
+    operation_facebook15:
+        operationModule: "@module_config_operation_facebook"
+        name: "@activity_facebook15->name"
+        activity: "@activity_facebook15"
+        startDate: "@activity_facebook15->startDate"
+        triggerHook: "@activity_facebook15->triggerHook"
+    operation_facebook16:
+        operationModule: "@module_config_operation_facebook"
+        name: "@activity_facebook16->name"
+        activity: "@activity_facebook16"
+        startDate: "@activity_facebook16->startDate"
+        triggerHook: "@activity_facebook16->triggerHook"
+    operation_facebook17:
+        operationModule: "@module_config_operation_facebook"
+        name: "@activity_facebook17->name"
+        activity: "@activity_facebook17"
+        startDate: "@activity_facebook17->startDate"
+        triggerHook: "@activity_facebook17->triggerHook"
+    operation_facebook18:
+        operationModule: "@module_config_operation_facebook"
+        name: "@activity_facebook18->name"
+        activity: "@activity_facebook18"
+        startDate: "@activity_facebook18->startDate"
+        triggerHook: "@activity_facebook18->triggerHook"
+    operation_facebook19:
+        operationModule: "@module_config_operation_facebook"
+        name: "@activity_facebook19->name"
+        activity: "@activity_facebook19"
+        startDate: "@activity_facebook19->startDate"
+        triggerHook: "@activity_facebook19->triggerHook"
+    operation_facebook20:
+        operationModule: "@module_config_operation_facebook"
+        name: "@activity_facebook20->name"
+        activity: "@activity_facebook20"
+        startDate: "@activity_facebook20->startDate"
+        triggerHook: "@activity_facebook20->triggerHook"
+    operation_facebook21:
+        operationModule: "@module_config_operation_facebook"
+        name: "@activity_facebook21->name"
+        activity: "@activity_facebook21"
+        startDate: "@activity_facebook21->startDate"
+        triggerHook: "@activity_facebook21->triggerHook"
+    operation_facebook22:
+        operationModule: "@module_config_operation_facebook"
+        name: "@activity_facebook22->name"
+        activity: "@activity_facebook22"
+        startDate: "@activity_facebook22->startDate"
+        triggerHook: "@activity_facebook22->triggerHook"
+    operation_facebook23:
+        operationModule: "@module_config_operation_facebook"
+        name: "@activity_facebook23->name"
+        activity: "@activity_facebook23"
+        startDate: "@activity_facebook23->startDate"
+        triggerHook: "@activity_facebook23->triggerHook"
+    operation_facebook24:
+        operationModule: "@module_config_operation_facebook"
+        name: "@activity_facebook24->name"
+        activity: "@activity_facebook24"
+        startDate: "@activity_facebook24->startDate"
+        triggerHook: "@activity_facebook24->triggerHook"
+    operation_facebook25:
+        operationModule: "@module_config_operation_facebook"
+        name: "@activity_facebook25->name"
+        activity: "@activity_facebook25"
+        startDate: "@activity_facebook25->startDate"
+        triggerHook: "@activity_facebook25->triggerHook"
+    operation_facebook26:
+        operationModule: "@module_config_operation_facebook"
+        name: "@activity_facebook26->name"
+        activity: "@activity_facebook26"
+        startDate: "@activity_facebook26->startDate"
+        triggerHook: "@activity_facebook26->triggerHook"
+    operation_facebook27:
+        operationModule: "@module_config_operation_facebook"
+        name: "@activity_facebook27->name"
+        activity: "@activity_facebook27"
+        startDate: "@activity_facebook27->startDate"
+        triggerHook: "@activity_facebook27->triggerHook"
+    operation_facebook28:
+        operationModule: "@module_config_operation_facebook"
+        name: "@activity_facebook28->name"
+        activity: "@activity_facebook28"
+        startDate: "@activity_facebook28->startDate"
+        triggerHook: "@activity_facebook28->triggerHook"
+    operation_facebook29:
+        operationModule: "@module_config_operation_facebook"
+        name: "@activity_facebook29->name"
+        activity: "@activity_facebook29"
+        startDate: "@activity_facebook29->startDate"
+        triggerHook: "@activity_facebook29->triggerHook"
+    operation_facebook30:
+        operationModule: "@module_config_operation_facebook"
+        name: "@activity_facebook30->name"
+        activity: "@activity_facebook30"
+        startDate: "@activity_facebook30->startDate"
+        triggerHook: "@activity_facebook30->triggerHook"
+
     # Twitter Status Update
-    operation_twitter{1..30}:
+    operation_twitter1:
         operationModule: "@module_config_operation_twitter"
-        name: "@activity_twitter<current()>->name"
-        activity: "@activity_twitter<current()>"
-        startDate: "@activity_twitter<current()>->startDate"
-        triggerHook: "@activity_twitter<current()>->triggerHook"
-    operation_linkedin{1..30}:
+        name: "@activity_twitter1->name"
+        activity: "@activity_twitter1"
+        startDate: "@activity_twitter1->startDate"
+        triggerHook: "@activity_twitter1->triggerHook"
+    operation_twitter2:
+        operationModule: "@module_config_operation_twitter"
+        name: "@activity_twitter2->name"
+        activity: "@activity_twitter2"
+        startDate: "@activity_twitter2->startDate"
+        triggerHook: "@activity_twitter2->triggerHook"
+    operation_twitter3:
+        operationModule: "@module_config_operation_twitter"
+        name: "@activity_twitter3->name"
+        activity: "@activity_twitter3"
+        startDate: "@activity_twitter3->startDate"
+        triggerHook: "@activity_twitter3->triggerHook"
+    operation_twitter4:
+        operationModule: "@module_config_operation_twitter"
+        name: "@activity_twitter4->name"
+        activity: "@activity_twitter4"
+        startDate: "@activity_twitter4->startDate"
+        triggerHook: "@activity_twitter4->triggerHook"
+    operation_twitter5:
+        operationModule: "@module_config_operation_twitter"
+        name: "@activity_twitter5->name"
+        activity: "@activity_twitter5"
+        startDate: "@activity_twitter5->startDate"
+        triggerHook: "@activity_twitter5->triggerHook"
+    operation_twitter6:
+        operationModule: "@module_config_operation_twitter"
+        name: "@activity_twitter6->name"
+        activity: "@activity_twitter6"
+        startDate: "@activity_twitter6->startDate"
+        triggerHook: "@activity_twitter6->triggerHook"
+    operation_twitter7:
+        operationModule: "@module_config_operation_twitter"
+        name: "@activity_twitter7->name"
+        activity: "@activity_twitter7"
+        startDate: "@activity_twitter7->startDate"
+        triggerHook: "@activity_twitter7->triggerHook"
+    operation_twitter8:
+        operationModule: "@module_config_operation_twitter"
+        name: "@activity_twitter8->name"
+        activity: "@activity_twitter8"
+        startDate: "@activity_twitter8->startDate"
+        triggerHook: "@activity_twitter8->triggerHook"
+    operation_twitter9:
+        operationModule: "@module_config_operation_twitter"
+        name: "@activity_twitter9->name"
+        activity: "@activity_twitter9"
+        startDate: "@activity_twitter9->startDate"
+        triggerHook: "@activity_twitter9->triggerHook"
+    operation_twitter10:
+        operationModule: "@module_config_operation_twitter"
+        name: "@activity_twitter10->name"
+        activity: "@activity_twitter10"
+        startDate: "@activity_twitter10->startDate"
+        triggerHook: "@activity_twitter10->triggerHook"
+    operation_twitter11:
+        operationModule: "@module_config_operation_twitter"
+        name: "@activity_twitter11->name"
+        activity: "@activity_twitter11"
+        startDate: "@activity_twitter11->startDate"
+        triggerHook: "@activity_twitter11->triggerHook"
+    operation_twitter12:
+        operationModule: "@module_config_operation_twitter"
+        name: "@activity_twitter12->name"
+        activity: "@activity_twitter12"
+        startDate: "@activity_twitter12->startDate"
+        triggerHook: "@activity_twitter12->triggerHook"
+    operation_twitter13:
+        operationModule: "@module_config_operation_twitter"
+        name: "@activity_twitter13->name"
+        activity: "@activity_twitter13"
+        startDate: "@activity_twitter13->startDate"
+        triggerHook: "@activity_twitter13->triggerHook"
+    operation_twitter14:
+        operationModule: "@module_config_operation_twitter"
+        name: "@activity_twitter14->name"
+        activity: "@activity_twitter14"
+        startDate: "@activity_twitter14->startDate"
+        triggerHook: "@activity_twitter14->triggerHook"
+    operation_twitter15:
+        operationModule: "@module_config_operation_twitter"
+        name: "@activity_twitter15->name"
+        activity: "@activity_twitter15"
+        startDate: "@activity_twitter15->startDate"
+        triggerHook: "@activity_twitter15->triggerHook"
+    operation_twitter16:
+        operationModule: "@module_config_operation_twitter"
+        name: "@activity_twitter16->name"
+        activity: "@activity_twitter16"
+        startDate: "@activity_twitter16->startDate"
+        triggerHook: "@activity_twitter16->triggerHook"
+    operation_twitter17:
+        operationModule: "@module_config_operation_twitter"
+        name: "@activity_twitter17->name"
+        activity: "@activity_twitter17"
+        startDate: "@activity_twitter17->startDate"
+        triggerHook: "@activity_twitter17->triggerHook"
+    operation_twitter18:
+        operationModule: "@module_config_operation_twitter"
+        name: "@activity_twitter18->name"
+        activity: "@activity_twitter18"
+        startDate: "@activity_twitter18->startDate"
+        triggerHook: "@activity_twitter18->triggerHook"
+    operation_twitter19:
+        operationModule: "@module_config_operation_twitter"
+        name: "@activity_twitter19->name"
+        activity: "@activity_twitter19"
+        startDate: "@activity_twitter19->startDate"
+        triggerHook: "@activity_twitter19->triggerHook"
+    operation_twitter20:
+        operationModule: "@module_config_operation_twitter"
+        name: "@activity_twitter20->name"
+        activity: "@activity_twitter20"
+        startDate: "@activity_twitter20->startDate"
+        triggerHook: "@activity_twitter20->triggerHook"
+    operation_twitter21:
+        operationModule: "@module_config_operation_twitter"
+        name: "@activity_twitter21->name"
+        activity: "@activity_twitter21"
+        startDate: "@activity_twitter21->startDate"
+        triggerHook: "@activity_twitter21->triggerHook"
+    operation_twitter22:
+        operationModule: "@module_config_operation_twitter"
+        name: "@activity_twitter22->name"
+        activity: "@activity_twitter22"
+        startDate: "@activity_twitter22->startDate"
+        triggerHook: "@activity_twitter22->triggerHook"
+    operation_twitter23:
+        operationModule: "@module_config_operation_twitter"
+        name: "@activity_twitter23->name"
+        activity: "@activity_twitter23"
+        startDate: "@activity_twitter23->startDate"
+        triggerHook: "@activity_twitter23->triggerHook"
+    operation_twitter24:
+        operationModule: "@module_config_operation_twitter"
+        name: "@activity_twitter24->name"
+        activity: "@activity_twitter24"
+        startDate: "@activity_twitter24->startDate"
+        triggerHook: "@activity_twitter24->triggerHook"
+    operation_twitter25:
+        operationModule: "@module_config_operation_twitter"
+        name: "@activity_twitter25->name"
+        activity: "@activity_twitter25"
+        startDate: "@activity_twitter25->startDate"
+        triggerHook: "@activity_twitter25->triggerHook"
+    operation_twitter26:
+        operationModule: "@module_config_operation_twitter"
+        name: "@activity_twitter26->name"
+        activity: "@activity_twitter26"
+        startDate: "@activity_twitter26->startDate"
+        triggerHook: "@activity_twitter26->triggerHook"
+    operation_twitter27:
+        operationModule: "@module_config_operation_twitter"
+        name: "@activity_twitter27->name"
+        activity: "@activity_twitter27"
+        startDate: "@activity_twitter27->startDate"
+        triggerHook: "@activity_twitter27->triggerHook"
+    operation_twitter28:
+        operationModule: "@module_config_operation_twitter"
+        name: "@activity_twitter28->name"
+        activity: "@activity_twitter28"
+        startDate: "@activity_twitter28->startDate"
+        triggerHook: "@activity_twitter28->triggerHook"
+    operation_twitter29:
+        operationModule: "@module_config_operation_twitter"
+        name: "@activity_twitter29->name"
+        activity: "@activity_twitter29"
+        startDate: "@activity_twitter29->startDate"
+        triggerHook: "@activity_twitter29->triggerHook"
+    operation_twitter30:
+        operationModule: "@module_config_operation_twitter"
+        name: "@activity_twitter30->name"
+        activity: "@activity_twitter30"
+        startDate: "@activity_twitter30->startDate"
+        triggerHook: "@activity_twitter30->triggerHook"
+
+    operation_linkedin1:
         operationModule: "@module_config_operation_linkedin"
-        name: "@activity_linkedin<current()>->name"
-        activity: "@activity_linkedin<current()>"
-        startDate: "@activity_linkedin<current()>->startDate"
-        triggerHook: "@activity_linkedin<current()>->triggerHook"
-    operation_xing{1..30}:
+        name: "@activity_linkedin1->name"
+        activity: "@activity_linkedin1"
+        startDate: "@activity_linkedin1->startDate"
+        triggerHook: "@activity_linkedin1->triggerHook"
+    operation_linkedin2:
+        operationModule: "@module_config_operation_linkedin"
+        name: "@activity_linkedin2->name"
+        activity: "@activity_linkedin2"
+        startDate: "@activity_linkedin2->startDate"
+        triggerHook: "@activity_linkedin2->triggerHook"
+    operation_linkedin3:
+        operationModule: "@module_config_operation_linkedin"
+        name: "@activity_linkedin3->name"
+        activity: "@activity_linkedin3"
+        startDate: "@activity_linkedin3->startDate"
+        triggerHook: "@activity_linkedin3->triggerHook"
+    operation_linkedin4:
+        operationModule: "@module_config_operation_linkedin"
+        name: "@activity_linkedin4->name"
+        activity: "@activity_linkedin4"
+        startDate: "@activity_linkedin4->startDate"
+        triggerHook: "@activity_linkedin4->triggerHook"
+    operation_linkedin5:
+        operationModule: "@module_config_operation_linkedin"
+        name: "@activity_linkedin5->name"
+        activity: "@activity_linkedin5"
+        startDate: "@activity_linkedin5->startDate"
+        triggerHook: "@activity_linkedin5->triggerHook"
+    operation_linkedin6:
+        operationModule: "@module_config_operation_linkedin"
+        name: "@activity_linkedin6->name"
+        activity: "@activity_linkedin6"
+        startDate: "@activity_linkedin6->startDate"
+        triggerHook: "@activity_linkedin6->triggerHook"
+    operation_linkedin7:
+        operationModule: "@module_config_operation_linkedin"
+        name: "@activity_linkedin7->name"
+        activity: "@activity_linkedin7"
+        startDate: "@activity_linkedin7->startDate"
+        triggerHook: "@activity_linkedin7->triggerHook"
+    operation_linkedin8:
+        operationModule: "@module_config_operation_linkedin"
+        name: "@activity_linkedin8->name"
+        activity: "@activity_linkedin8"
+        startDate: "@activity_linkedin8->startDate"
+        triggerHook: "@activity_linkedin8->triggerHook"
+    operation_linkedin9:
+        operationModule: "@module_config_operation_linkedin"
+        name: "@activity_linkedin9->name"
+        activity: "@activity_linkedin9"
+        startDate: "@activity_linkedin9->startDate"
+        triggerHook: "@activity_linkedin9->triggerHook"
+    operation_linkedin10:
+        operationModule: "@module_config_operation_linkedin"
+        name: "@activity_linkedin10->name"
+        activity: "@activity_linkedin10"
+        startDate: "@activity_linkedin10->startDate"
+        triggerHook: "@activity_linkedin10->triggerHook"
+    operation_linkedin11:
+        operationModule: "@module_config_operation_linkedin"
+        name: "@activity_linkedin11->name"
+        activity: "@activity_linkedin11"
+        startDate: "@activity_linkedin11->startDate"
+        triggerHook: "@activity_linkedin11->triggerHook"
+    operation_linkedin12:
+        operationModule: "@module_config_operation_linkedin"
+        name: "@activity_linkedin12->name"
+        activity: "@activity_linkedin12"
+        startDate: "@activity_linkedin12->startDate"
+        triggerHook: "@activity_linkedin12->triggerHook"
+    operation_linkedin13:
+        operationModule: "@module_config_operation_linkedin"
+        name: "@activity_linkedin13->name"
+        activity: "@activity_linkedin13"
+        startDate: "@activity_linkedin13->startDate"
+        triggerHook: "@activity_linkedin13->triggerHook"
+    operation_linkedin14:
+        operationModule: "@module_config_operation_linkedin"
+        name: "@activity_linkedin14->name"
+        activity: "@activity_linkedin14"
+        startDate: "@activity_linkedin14->startDate"
+        triggerHook: "@activity_linkedin14->triggerHook"
+    operation_linkedin15:
+        operationModule: "@module_config_operation_linkedin"
+        name: "@activity_linkedin15->name"
+        activity: "@activity_linkedin15"
+        startDate: "@activity_linkedin15->startDate"
+        triggerHook: "@activity_linkedin15->triggerHook"
+    operation_linkedin16:
+        operationModule: "@module_config_operation_linkedin"
+        name: "@activity_linkedin16->name"
+        activity: "@activity_linkedin16"
+        startDate: "@activity_linkedin16->startDate"
+        triggerHook: "@activity_linkedin16->triggerHook"
+    operation_linkedin17:
+        operationModule: "@module_config_operation_linkedin"
+        name: "@activity_linkedin17->name"
+        activity: "@activity_linkedin17"
+        startDate: "@activity_linkedin17->startDate"
+        triggerHook: "@activity_linkedin17->triggerHook"
+    operation_linkedin18:
+        operationModule: "@module_config_operation_linkedin"
+        name: "@activity_linkedin18->name"
+        activity: "@activity_linkedin18"
+        startDate: "@activity_linkedin18->startDate"
+        triggerHook: "@activity_linkedin18->triggerHook"
+    operation_linkedin19:
+        operationModule: "@module_config_operation_linkedin"
+        name: "@activity_linkedin19->name"
+        activity: "@activity_linkedin19"
+        startDate: "@activity_linkedin19->startDate"
+        triggerHook: "@activity_linkedin19->triggerHook"
+    operation_linkedin20:
+        operationModule: "@module_config_operation_linkedin"
+        name: "@activity_linkedin20->name"
+        activity: "@activity_linkedin20"
+        startDate: "@activity_linkedin20->startDate"
+        triggerHook: "@activity_linkedin20->triggerHook"
+    operation_linkedin21:
+        operationModule: "@module_config_operation_linkedin"
+        name: "@activity_linkedin21->name"
+        activity: "@activity_linkedin21"
+        startDate: "@activity_linkedin21->startDate"
+        triggerHook: "@activity_linkedin21->triggerHook"
+    operation_linkedin22:
+        operationModule: "@module_config_operation_linkedin"
+        name: "@activity_linkedin22->name"
+        activity: "@activity_linkedin22"
+        startDate: "@activity_linkedin22->startDate"
+        triggerHook: "@activity_linkedin22->triggerHook"
+    operation_linkedin23:
+        operationModule: "@module_config_operation_linkedin"
+        name: "@activity_linkedin23->name"
+        activity: "@activity_linkedin23"
+        startDate: "@activity_linkedin23->startDate"
+        triggerHook: "@activity_linkedin23->triggerHook"
+    operation_linkedin24:
+        operationModule: "@module_config_operation_linkedin"
+        name: "@activity_linkedin24->name"
+        activity: "@activity_linkedin24"
+        startDate: "@activity_linkedin24->startDate"
+        triggerHook: "@activity_linkedin24->triggerHook"
+    operation_linkedin25:
+        operationModule: "@module_config_operation_linkedin"
+        name: "@activity_linkedin25->name"
+        activity: "@activity_linkedin25"
+        startDate: "@activity_linkedin25->startDate"
+        triggerHook: "@activity_linkedin25->triggerHook"
+    operation_linkedin26:
+        operationModule: "@module_config_operation_linkedin"
+        name: "@activity_linkedin26->name"
+        activity: "@activity_linkedin26"
+        startDate: "@activity_linkedin26->startDate"
+        triggerHook: "@activity_linkedin26->triggerHook"
+    operation_linkedin27:
+        operationModule: "@module_config_operation_linkedin"
+        name: "@activity_linkedin27->name"
+        activity: "@activity_linkedin27"
+        startDate: "@activity_linkedin27->startDate"
+        triggerHook: "@activity_linkedin27->triggerHook"
+    operation_linkedin28:
+        operationModule: "@module_config_operation_linkedin"
+        name: "@activity_linkedin28->name"
+        activity: "@activity_linkedin28"
+        startDate: "@activity_linkedin28->startDate"
+        triggerHook: "@activity_linkedin28->triggerHook"
+    operation_linkedin29:
+        operationModule: "@module_config_operation_linkedin"
+        name: "@activity_linkedin29->name"
+        activity: "@activity_linkedin29"
+        startDate: "@activity_linkedin29->startDate"
+        triggerHook: "@activity_linkedin29->triggerHook"
+    operation_linkedin30:
+        operationModule: "@module_config_operation_linkedin"
+        name: "@activity_linkedin30->name"
+        activity: "@activity_linkedin30"
+        startDate: "@activity_linkedin30->startDate"
+        triggerHook: "@activity_linkedin30->triggerHook"
+
+    operation_xing1:
         operationModule: "@module_config_operation_xing"
-        name: "@activity_xing<current()>->name"
-        activity: "@activity_xing<current()>"
-        startDate: "@activity_xing<current()>->startDate"
-        triggerHook: "@activity_xing<current()>->triggerHook"
+        name: "@activity_xing1->name"
+        activity: "@activity_xing1"
+        startDate: "@activity_xing1->startDate"
+        triggerHook: "@activity_xing1->triggerHook"
+    operation_xing2:
+        operationModule: "@module_config_operation_xing"
+        name: "@activity_xing2->name"
+        activity: "@activity_xing2"
+        startDate: "@activity_xing2->startDate"
+        triggerHook: "@activity_xing2->triggerHook"
+    operation_xing3:
+        operationModule: "@module_config_operation_xing"
+        name: "@activity_xing3->name"
+        activity: "@activity_xing3"
+        startDate: "@activity_xing3->startDate"
+        triggerHook: "@activity_xing3->triggerHook"
+    operation_xing4:
+        operationModule: "@module_config_operation_xing"
+        name: "@activity_xing4->name"
+        activity: "@activity_xing4"
+        startDate: "@activity_xing4->startDate"
+        triggerHook: "@activity_xing4->triggerHook"
+    operation_xing5:
+        operationModule: "@module_config_operation_xing"
+        name: "@activity_xing5->name"
+        activity: "@activity_xing5"
+        startDate: "@activity_xing5->startDate"
+        triggerHook: "@activity_xing5->triggerHook"
+    operation_xing6:
+        operationModule: "@module_config_operation_xing"
+        name: "@activity_xing6->name"
+        activity: "@activity_xing6"
+        startDate: "@activity_xing6->startDate"
+        triggerHook: "@activity_xing6->triggerHook"
+    operation_xing7:
+        operationModule: "@module_config_operation_xing"
+        name: "@activity_xing7->name"
+        activity: "@activity_xing7"
+        startDate: "@activity_xing7->startDate"
+        triggerHook: "@activity_xing7->triggerHook"
+    operation_xing8:
+        operationModule: "@module_config_operation_xing"
+        name: "@activity_xing8->name"
+        activity: "@activity_xing8"
+        startDate: "@activity_xing8->startDate"
+        triggerHook: "@activity_xing8->triggerHook"
+    operation_xing9:
+        operationModule: "@module_config_operation_xing"
+        name: "@activity_xing9->name"
+        activity: "@activity_xing9"
+        startDate: "@activity_xing9->startDate"
+        triggerHook: "@activity_xing9->triggerHook"
+    operation_xing10:
+        operationModule: "@module_config_operation_xing"
+        name: "@activity_xing10->name"
+        activity: "@activity_xing10"
+        startDate: "@activity_xing10->startDate"
+        triggerHook: "@activity_xing10->triggerHook"
+    operation_xing11:
+        operationModule: "@module_config_operation_xing"
+        name: "@activity_xing11->name"
+        activity: "@activity_xing11"
+        startDate: "@activity_xing11->startDate"
+        triggerHook: "@activity_xing11->triggerHook"
+    operation_xing12:
+        operationModule: "@module_config_operation_xing"
+        name: "@activity_xing12->name"
+        activity: "@activity_xing12"
+        startDate: "@activity_xing12->startDate"
+        triggerHook: "@activity_xing12->triggerHook"
+    operation_xing13:
+        operationModule: "@module_config_operation_xing"
+        name: "@activity_xing13->name"
+        activity: "@activity_xing13"
+        startDate: "@activity_xing13->startDate"
+        triggerHook: "@activity_xing13->triggerHook"
+    operation_xing14:
+        operationModule: "@module_config_operation_xing"
+        name: "@activity_xing14->name"
+        activity: "@activity_xing14"
+        startDate: "@activity_xing14->startDate"
+        triggerHook: "@activity_xing14->triggerHook"
+    operation_xing15:
+        operationModule: "@module_config_operation_xing"
+        name: "@activity_xing15->name"
+        activity: "@activity_xing15"
+        startDate: "@activity_xing15->startDate"
+        triggerHook: "@activity_xing15->triggerHook"
+    operation_xing16:
+        operationModule: "@module_config_operation_xing"
+        name: "@activity_xing16->name"
+        activity: "@activity_xing16"
+        startDate: "@activity_xing16->startDate"
+        triggerHook: "@activity_xing16->triggerHook"
+    operation_xing17:
+        operationModule: "@module_config_operation_xing"
+        name: "@activity_xing17->name"
+        activity: "@activity_xing17"
+        startDate: "@activity_xing17->startDate"
+        triggerHook: "@activity_xing17->triggerHook"
+    operation_xing18:
+        operationModule: "@module_config_operation_xing"
+        name: "@activity_xing18->name"
+        activity: "@activity_xing18"
+        startDate: "@activity_xing18->startDate"
+        triggerHook: "@activity_xing18->triggerHook"
+    operation_xing19:
+        operationModule: "@module_config_operation_xing"
+        name: "@activity_xing19->name"
+        activity: "@activity_xing19"
+        startDate: "@activity_xing19->startDate"
+        triggerHook: "@activity_xing19->triggerHook"
+    operation_xing20:
+        operationModule: "@module_config_operation_xing"
+        name: "@activity_xing20->name"
+        activity: "@activity_xing20"
+        startDate: "@activity_xing20->startDate"
+        triggerHook: "@activity_xing20->triggerHook"
+    operation_xing21:
+        operationModule: "@module_config_operation_xing"
+        name: "@activity_xing21->name"
+        activity: "@activity_xing21"
+        startDate: "@activity_xing21->startDate"
+        triggerHook: "@activity_xing21->triggerHook"
+    operation_xing22:
+        operationModule: "@module_config_operation_xing"
+        name: "@activity_xing22->name"
+        activity: "@activity_xing22"
+        startDate: "@activity_xing22->startDate"
+        triggerHook: "@activity_xing22->triggerHook"
+    operation_xing23:
+        operationModule: "@module_config_operation_xing"
+        name: "@activity_xing23->name"
+        activity: "@activity_xing23"
+        startDate: "@activity_xing23->startDate"
+        triggerHook: "@activity_xing23->triggerHook"
+    operation_xing24:
+        operationModule: "@module_config_operation_xing"
+        name: "@activity_xing24->name"
+        activity: "@activity_xing24"
+        startDate: "@activity_xing24->startDate"
+        triggerHook: "@activity_xing24->triggerHook"
+    operation_xing25:
+        operationModule: "@module_config_operation_xing"
+        name: "@activity_xing25->name"
+        activity: "@activity_xing25"
+        startDate: "@activity_xing25->startDate"
+        triggerHook: "@activity_xing25->triggerHook"
+    operation_xing26:
+        operationModule: "@module_config_operation_xing"
+        name: "@activity_xing26->name"
+        activity: "@activity_xing26"
+        startDate: "@activity_xing26->startDate"
+        triggerHook: "@activity_xing26->triggerHook"
+    operation_xing27:
+        operationModule: "@module_config_operation_xing"
+        name: "@activity_xing27->name"
+        activity: "@activity_xing27"
+        startDate: "@activity_xing27->startDate"
+        triggerHook: "@activity_xing27->triggerHook"
+    operation_xing28:
+        operationModule: "@module_config_operation_xing"
+        name: "@activity_xing28->name"
+        activity: "@activity_xing28"
+        startDate: "@activity_xing28->startDate"
+        triggerHook: "@activity_xing28->triggerHook"
+    operation_xing29:
+        operationModule: "@module_config_operation_xing"
+        name: "@activity_xing29->name"
+        activity: "@activity_xing29"
+        startDate: "@activity_xing29->startDate"
+        triggerHook: "@activity_xing29->triggerHook"
+    operation_xing30:
+        operationModule: "@module_config_operation_xing"
+        name: "@activity_xing30->name"
+        activity: "@activity_xing30"
+        startDate: "@activity_xing30->startDate"
+        triggerHook: "@activity_xing30->triggerHook"
 
 # Locations created by Operations
 \CampaignChain\CoreBundle\Entity\Location:
@@ -99,27 +807,727 @@
         locationModule: "@module_config_location_gotowebinar"
         status: unpublished
         URL: https://attendee.gotowebinar.com/register/1772346038074117889
-    location_facebook{1..30}:
+
+    location_facebook1:
         parent: "@location_facebook_user1"
-        name: "@operation_facebook<current()>->name"
-        operation: "@operation_facebook<current()>"
+        name: "@operation_facebook1->name"
+        operation: "@operation_facebook1"
         locationModule: "@module_config_location_facebook_status"
         status: unpublished
-    location_twitter{1..30}:
+    location_facebook2:
+        parent: "@location_facebook_user1"
+        name: "@operation_facebook2->name"
+        operation: "@operation_facebook2"
+        locationModule: "@module_config_location_facebook_status"
+        status: unpublished
+    location_facebook3:
+        parent: "@location_facebook_user1"
+        name: "@operation_facebook3->name"
+        operation: "@operation_facebook3"
+        locationModule: "@module_config_location_facebook_status"
+        status: unpublished
+    location_facebook4:
+        parent: "@location_facebook_user1"
+        name: "@operation_facebook4->name"
+        operation: "@operation_facebook4"
+        locationModule: "@module_config_location_facebook_status"
+        status: unpublished
+    location_facebook5:
+        parent: "@location_facebook_user1"
+        name: "@operation_facebook5->name"
+        operation: "@operation_facebook5"
+        locationModule: "@module_config_location_facebook_status"
+        status: unpublished
+    location_facebook6:
+        parent: "@location_facebook_user1"
+        name: "@operation_facebook6->name"
+        operation: "@operation_facebook6"
+        locationModule: "@module_config_location_facebook_status"
+        status: unpublished
+    location_facebook7:
+        parent: "@location_facebook_user1"
+        name: "@operation_facebook7->name"
+        operation: "@operation_facebook7"
+        locationModule: "@module_config_location_facebook_status"
+        status: unpublished
+    location_facebook8:
+        parent: "@location_facebook_user1"
+        name: "@operation_facebook8->name"
+        operation: "@operation_facebook8"
+        locationModule: "@module_config_location_facebook_status"
+        status: unpublished
+    location_facebook9:
+        parent: "@location_facebook_user1"
+        name: "@operation_facebook9->name"
+        operation: "@operation_facebook9"
+        locationModule: "@module_config_location_facebook_status"
+        status: unpublished
+    location_facebook10:
+        parent: "@location_facebook_user1"
+        name: "@operation_facebook10->name"
+        operation: "@operation_facebook10"
+        locationModule: "@module_config_location_facebook_status"
+        status: unpublished
+    location_facebook11:
+        parent: "@location_facebook_user1"
+        name: "@operation_facebook11->name"
+        operation: "@operation_facebook11"
+        locationModule: "@module_config_location_facebook_status"
+        status: unpublished
+    location_facebook12:
+        parent: "@location_facebook_user1"
+        name: "@operation_facebook12->name"
+        operation: "@operation_facebook12"
+        locationModule: "@module_config_location_facebook_status"
+        status: unpublished
+    location_facebook13:
+        parent: "@location_facebook_user1"
+        name: "@operation_facebook13->name"
+        operation: "@operation_facebook13"
+        locationModule: "@module_config_location_facebook_status"
+        status: unpublished
+    location_facebook14:
+        parent: "@location_facebook_user1"
+        name: "@operation_facebook14->name"
+        operation: "@operation_facebook14"
+        locationModule: "@module_config_location_facebook_status"
+        status: unpublished
+    location_facebook15:
+        parent: "@location_facebook_user1"
+        name: "@operation_facebook15->name"
+        operation: "@operation_facebook15"
+        locationModule: "@module_config_location_facebook_status"
+        status: unpublished
+    location_facebook16:
+        parent: "@location_facebook_user1"
+        name: "@operation_facebook16->name"
+        operation: "@operation_facebook16"
+        locationModule: "@module_config_location_facebook_status"
+        status: unpublished
+    location_facebook17:
+        parent: "@location_facebook_user1"
+        name: "@operation_facebook17->name"
+        operation: "@operation_facebook17"
+        locationModule: "@module_config_location_facebook_status"
+        status: unpublished
+    location_facebook18:
+        parent: "@location_facebook_user1"
+        name: "@operation_facebook18->name"
+        operation: "@operation_facebook18"
+        locationModule: "@module_config_location_facebook_status"
+        status: unpublished
+    location_facebook19:
+        parent: "@location_facebook_user1"
+        name: "@operation_facebook19->name"
+        operation: "@operation_facebook19"
+        locationModule: "@module_config_location_facebook_status"
+        status: unpublished
+    location_facebook20:
+        parent: "@location_facebook_user1"
+        name: "@operation_facebook20->name"
+        operation: "@operation_facebook20"
+        locationModule: "@module_config_location_facebook_status"
+        status: unpublished
+    location_facebook21:
+        parent: "@location_facebook_user1"
+        name: "@operation_facebook21->name"
+        operation: "@operation_facebook21"
+        locationModule: "@module_config_location_facebook_status"
+        status: unpublished
+    location_facebook22:
+        parent: "@location_facebook_user1"
+        name: "@operation_facebook22->name"
+        operation: "@operation_facebook22"
+        locationModule: "@module_config_location_facebook_status"
+        status: unpublished
+    location_facebook23:
+        parent: "@location_facebook_user1"
+        name: "@operation_facebook23->name"
+        operation: "@operation_facebook23"
+        locationModule: "@module_config_location_facebook_status"
+        status: unpublished
+    location_facebook24:
+        parent: "@location_facebook_user1"
+        name: "@operation_facebook24->name"
+        operation: "@operation_facebook24"
+        locationModule: "@module_config_location_facebook_status"
+        status: unpublished
+    location_facebook25:
+        parent: "@location_facebook_user1"
+        name: "@operation_facebook25->name"
+        operation: "@operation_facebook25"
+        locationModule: "@module_config_location_facebook_status"
+        status: unpublished
+    location_facebook26:
+        parent: "@location_facebook_user1"
+        name: "@operation_facebook26->name"
+        operation: "@operation_facebook26"
+        locationModule: "@module_config_location_facebook_status"
+        status: unpublished
+    location_facebook27:
+        parent: "@location_facebook_user1"
+        name: "@operation_facebook27->name"
+        operation: "@operation_facebook27"
+        locationModule: "@module_config_location_facebook_status"
+        status: unpublished
+    location_facebook28:
+        parent: "@location_facebook_user1"
+        name: "@operation_facebook28->name"
+        operation: "@operation_facebook28"
+        locationModule: "@module_config_location_facebook_status"
+        status: unpublished
+    location_facebook29:
+        parent: "@location_facebook_user1"
+        name: "@operation_facebook29->name"
+        operation: "@operation_facebook29"
+        locationModule: "@module_config_location_facebook_status"
+        status: unpublished
+    location_facebook30:
+        parent: "@location_facebook_user1"
+        name: "@operation_facebook30->name"
+        operation: "@operation_facebook30"
+        locationModule: "@module_config_location_facebook_status"
+        status: unpublished
+
+    location_twitter1:
         parent: "@location_twitter"
-        name: "@operation_twitter<current()>->name"
-        operation: "@operation_twitter<current()>"
+        name: "@operation_twitter1->name"
+        operation: "@operation_twitter1"
         locationModule: "@module_config_location_twitter_status"
         status: unpublished
-    location_linkedin{1..30}:
+    location_twitter2:
+        parent: "@location_twitter"
+        name: "@operation_twitter2->name"
+        operation: "@operation_twitter2"
+        locationModule: "@module_config_location_twitter_status"
+        status: unpublished
+    location_twitter3:
+        parent: "@location_twitter"
+        name: "@operation_twitter3->name"
+        operation: "@operation_twitter3"
+        locationModule: "@module_config_location_twitter_status"
+        status: unpublished
+    location_twitter4:
+        parent: "@location_twitter"
+        name: "@operation_twitter4->name"
+        operation: "@operation_twitter4"
+        locationModule: "@module_config_location_twitter_status"
+        status: unpublished
+    location_twitter5:
+        parent: "@location_twitter"
+        name: "@operation_twitter5->name"
+        operation: "@operation_twitter5"
+        locationModule: "@module_config_location_twitter_status"
+        status: unpublished
+    location_twitter6:
+        parent: "@location_twitter"
+        name: "@operation_twitter6->name"
+        operation: "@operation_twitter6"
+        locationModule: "@module_config_location_twitter_status"
+        status: unpublished
+    location_twitter7:
+        parent: "@location_twitter"
+        name: "@operation_twitter7->name"
+        operation: "@operation_twitter7"
+        locationModule: "@module_config_location_twitter_status"
+        status: unpublished
+    location_twitter8:
+        parent: "@location_twitter"
+        name: "@operation_twitter8->name"
+        operation: "@operation_twitter8"
+        locationModule: "@module_config_location_twitter_status"
+        status: unpublished
+    location_twitter9:
+        parent: "@location_twitter"
+        name: "@operation_twitter9->name"
+        operation: "@operation_twitter9"
+        locationModule: "@module_config_location_twitter_status"
+        status: unpublished
+    location_twitter10:
+        parent: "@location_twitter"
+        name: "@operation_twitter10->name"
+        operation: "@operation_twitter10"
+        locationModule: "@module_config_location_twitter_status"
+        status: unpublished
+    location_twitter11:
+        parent: "@location_twitter"
+        name: "@operation_twitter11->name"
+        operation: "@operation_twitter11"
+        locationModule: "@module_config_location_twitter_status"
+        status: unpublished
+    location_twitter12:
+        parent: "@location_twitter"
+        name: "@operation_twitter12->name"
+        operation: "@operation_twitter12"
+        locationModule: "@module_config_location_twitter_status"
+        status: unpublished
+    location_twitter13:
+        parent: "@location_twitter"
+        name: "@operation_twitter13->name"
+        operation: "@operation_twitter13"
+        locationModule: "@module_config_location_twitter_status"
+        status: unpublished
+    location_twitter14:
+        parent: "@location_twitter"
+        name: "@operation_twitter14->name"
+        operation: "@operation_twitter14"
+        locationModule: "@module_config_location_twitter_status"
+        status: unpublished
+    location_twitter15:
+        parent: "@location_twitter"
+        name: "@operation_twitter15->name"
+        operation: "@operation_twitter15"
+        locationModule: "@module_config_location_twitter_status"
+        status: unpublished
+    location_twitter16:
+        parent: "@location_twitter"
+        name: "@operation_twitter16->name"
+        operation: "@operation_twitter16"
+        locationModule: "@module_config_location_twitter_status"
+        status: unpublished
+    location_twitter17:
+        parent: "@location_twitter"
+        name: "@operation_twitter17->name"
+        operation: "@operation_twitter17"
+        locationModule: "@module_config_location_twitter_status"
+        status: unpublished
+    location_twitter18:
+        parent: "@location_twitter"
+        name: "@operation_twitter18->name"
+        operation: "@operation_twitter18"
+        locationModule: "@module_config_location_twitter_status"
+        status: unpublished
+    location_twitter19:
+        parent: "@location_twitter"
+        name: "@operation_twitter19->name"
+        operation: "@operation_twitter19"
+        locationModule: "@module_config_location_twitter_status"
+        status: unpublished
+    location_twitter20:
+        parent: "@location_twitter"
+        name: "@operation_twitter20->name"
+        operation: "@operation_twitter20"
+        locationModule: "@module_config_location_twitter_status"
+        status: unpublished
+    location_twitter21:
+        parent: "@location_twitter"
+        name: "@operation_twitter21->name"
+        operation: "@operation_twitter21"
+        locationModule: "@module_config_location_twitter_status"
+        status: unpublished
+    location_twitter22:
+        parent: "@location_twitter"
+        name: "@operation_twitter22->name"
+        operation: "@operation_twitter22"
+        locationModule: "@module_config_location_twitter_status"
+        status: unpublished
+    location_twitter23:
+        parent: "@location_twitter"
+        name: "@operation_twitter23->name"
+        operation: "@operation_twitter23"
+        locationModule: "@module_config_location_twitter_status"
+        status: unpublished
+    location_twitter24:
+        parent: "@location_twitter"
+        name: "@operation_twitter24->name"
+        operation: "@operation_twitter24"
+        locationModule: "@module_config_location_twitter_status"
+        status: unpublished
+    location_twitter25:
+        parent: "@location_twitter"
+        name: "@operation_twitter25->name"
+        operation: "@operation_twitter25"
+        locationModule: "@module_config_location_twitter_status"
+        status: unpublished
+    location_twitter26:
+        parent: "@location_twitter"
+        name: "@operation_twitter26->name"
+        operation: "@operation_twitter26"
+        locationModule: "@module_config_location_twitter_status"
+        status: unpublished
+    location_twitter27:
+        parent: "@location_twitter"
+        name: "@operation_twitter27->name"
+        operation: "@operation_twitter27"
+        locationModule: "@module_config_location_twitter_status"
+        status: unpublished
+    location_twitter28:
+        parent: "@location_twitter"
+        name: "@operation_twitter28->name"
+        operation: "@operation_twitter28"
+        locationModule: "@module_config_location_twitter_status"
+        status: unpublished
+    location_twitter29:
+        parent: "@location_twitter"
+        name: "@operation_twitter29->name"
+        operation: "@operation_twitter29"
+        locationModule: "@module_config_location_twitter_status"
+        status: unpublished
+    location_twitter30:
+        parent: "@location_twitter"
+        name: "@operation_twitter30->name"
+        operation: "@operation_twitter30"
+        locationModule: "@module_config_location_twitter_status"
+        status: unpublished
+
+    location_linkedin1:
         parent: "@location_linkedin"
-        name: "@operation_linkedin<current()>->name"
-        operation: "@operation_linkedin<current()>"
+        name: "@operation_linkedin1->name"
+        operation: "@operation_linkedin1"
         locationModule: "@module_config_location_linkedin_user"
         status: unpublished
-    location_xing{1..30}:
+    location_linkedin2:
+        parent: "@location_linkedin"
+        name: "@operation_linkedin2->name"
+        operation: "@operation_linkedin2"
+        locationModule: "@module_config_location_linkedin_user"
+        status: unpublished
+    location_linkedin3:
+        parent: "@location_linkedin"
+        name: "@operation_linkedin3->name"
+        operation: "@operation_linkedin3"
+        locationModule: "@module_config_location_linkedin_user"
+        status: unpublished
+    location_linkedin4:
+        parent: "@location_linkedin"
+        name: "@operation_linkedin4->name"
+        operation: "@operation_linkedin4"
+        locationModule: "@module_config_location_linkedin_user"
+        status: unpublished
+    location_linkedin5:
+        parent: "@location_linkedin"
+        name: "@operation_linkedin5->name"
+        operation: "@operation_linkedin5"
+        locationModule: "@module_config_location_linkedin_user"
+        status: unpublished
+    location_linkedin6:
+        parent: "@location_linkedin"
+        name: "@operation_linkedin6->name"
+        operation: "@operation_linkedin6"
+        locationModule: "@module_config_location_linkedin_user"
+        status: unpublished
+    location_linkedin7:
+        parent: "@location_linkedin"
+        name: "@operation_linkedin7->name"
+        operation: "@operation_linkedin7"
+        locationModule: "@module_config_location_linkedin_user"
+        status: unpublished
+    location_linkedin8:
+        parent: "@location_linkedin"
+        name: "@operation_linkedin8->name"
+        operation: "@operation_linkedin8"
+        locationModule: "@module_config_location_linkedin_user"
+        status: unpublished
+    location_linkedin9:
+        parent: "@location_linkedin"
+        name: "@operation_linkedin9->name"
+        operation: "@operation_linkedin9"
+        locationModule: "@module_config_location_linkedin_user"
+        status: unpublished
+    location_linkedin10:
+        parent: "@location_linkedin"
+        name: "@operation_linkedin10->name"
+        operation: "@operation_linkedin10"
+        locationModule: "@module_config_location_linkedin_user"
+        status: unpublished
+    location_linkedin11:
+        parent: "@location_linkedin"
+        name: "@operation_linkedin11->name"
+        operation: "@operation_linkedin11"
+        locationModule: "@module_config_location_linkedin_user"
+        status: unpublished
+    location_linkedin12:
+        parent: "@location_linkedin"
+        name: "@operation_linkedin12->name"
+        operation: "@operation_linkedin12"
+        locationModule: "@module_config_location_linkedin_user"
+        status: unpublished
+    location_linkedin13:
+        parent: "@location_linkedin"
+        name: "@operation_linkedin13->name"
+        operation: "@operation_linkedin13"
+        locationModule: "@module_config_location_linkedin_user"
+        status: unpublished
+    location_linkedin14:
+        parent: "@location_linkedin"
+        name: "@operation_linkedin14->name"
+        operation: "@operation_linkedin14"
+        locationModule: "@module_config_location_linkedin_user"
+        status: unpublished
+    location_linkedin15:
+        parent: "@location_linkedin"
+        name: "@operation_linkedin15->name"
+        operation: "@operation_linkedin15"
+        locationModule: "@module_config_location_linkedin_user"
+        status: unpublished
+    location_linkedin16:
+        parent: "@location_linkedin"
+        name: "@operation_linkedin16->name"
+        operation: "@operation_linkedin16"
+        locationModule: "@module_config_location_linkedin_user"
+        status: unpublished
+    location_linkedin17:
+        parent: "@location_linkedin"
+        name: "@operation_linkedin17->name"
+        operation: "@operation_linkedin17"
+        locationModule: "@module_config_location_linkedin_user"
+        status: unpublished
+    location_linkedin18:
+        parent: "@location_linkedin"
+        name: "@operation_linkedin18->name"
+        operation: "@operation_linkedin18"
+        locationModule: "@module_config_location_linkedin_user"
+        status: unpublished
+    location_linkedin19:
+        parent: "@location_linkedin"
+        name: "@operation_linkedin19->name"
+        operation: "@operation_linkedin19"
+        locationModule: "@module_config_location_linkedin_user"
+        status: unpublished
+    location_linkedin20:
+        parent: "@location_linkedin"
+        name: "@operation_linkedin20->name"
+        operation: "@operation_linkedin20"
+        locationModule: "@module_config_location_linkedin_user"
+        status: unpublished
+    location_linkedin21:
+        parent: "@location_linkedin"
+        name: "@operation_linkedin21->name"
+        operation: "@operation_linkedin21"
+        locationModule: "@module_config_location_linkedin_user"
+        status: unpublished
+    location_linkedin22:
+        parent: "@location_linkedin"
+        name: "@operation_linkedin22->name"
+        operation: "@operation_linkedin22"
+        locationModule: "@module_config_location_linkedin_user"
+        status: unpublished
+    location_linkedin23:
+        parent: "@location_linkedin"
+        name: "@operation_linkedin23->name"
+        operation: "@operation_linkedin23"
+        locationModule: "@module_config_location_linkedin_user"
+        status: unpublished
+    location_linkedin24:
+        parent: "@location_linkedin"
+        name: "@operation_linkedin24->name"
+        operation: "@operation_linkedin24"
+        locationModule: "@module_config_location_linkedin_user"
+        status: unpublished
+    location_linkedin25:
+        parent: "@location_linkedin"
+        name: "@operation_linkedin25->name"
+        operation: "@operation_linkedin25"
+        locationModule: "@module_config_location_linkedin_user"
+        status: unpublished
+    location_linkedin26:
+        parent: "@location_linkedin"
+        name: "@operation_linkedin26->name"
+        operation: "@operation_linkedin26"
+        locationModule: "@module_config_location_linkedin_user"
+        status: unpublished
+    location_linkedin27:
+        parent: "@location_linkedin"
+        name: "@operation_linkedin27->name"
+        operation: "@operation_linkedin27"
+        locationModule: "@module_config_location_linkedin_user"
+        status: unpublished
+    location_linkedin28:
+        parent: "@location_linkedin"
+        name: "@operation_linkedin28->name"
+        operation: "@operation_linkedin28"
+        locationModule: "@module_config_location_linkedin_user"
+        status: unpublished
+    location_linkedin29:
+        parent: "@location_linkedin"
+        name: "@operation_linkedin29->name"
+        operation: "@operation_linkedin29"
+        locationModule: "@module_config_location_linkedin_user"
+        status: unpublished
+    location_linkedin30:
+        parent: "@location_linkedin"
+        name: "@operation_linkedin30->name"
+        operation: "@operation_linkedin30"
+        locationModule: "@module_config_location_linkedin_user"
+        status: unpublished
+
+    location_xing1:
         parent: "@location_xing"
-        name: "@operation_xing<current()>->name"
-        operation: "@operation_xing<current()>"
+        name: "@operation_xing1->name"
+        operation: "@operation_xing1"
+        locationModule: "@module_config_location_xing_user"
+        status: unpublished
+    location_xing2:
+        parent: "@location_xing"
+        name: "@operation_xing2->name"
+        operation: "@operation_xing2"
+        locationModule: "@module_config_location_xing_user"
+        status: unpublished
+    location_xing3:
+        parent: "@location_xing"
+        name: "@operation_xing3->name"
+        operation: "@operation_xing3"
+        locationModule: "@module_config_location_xing_user"
+        status: unpublished
+    location_xing4:
+        parent: "@location_xing"
+        name: "@operation_xing4->name"
+        operation: "@operation_xing4"
+        locationModule: "@module_config_location_xing_user"
+        status: unpublished
+    location_xing5:
+        parent: "@location_xing"
+        name: "@operation_xing5->name"
+        operation: "@operation_xing5"
+        locationModule: "@module_config_location_xing_user"
+        status: unpublished
+    location_xing6:
+        parent: "@location_xing"
+        name: "@operation_xing6->name"
+        operation: "@operation_xing6"
+        locationModule: "@module_config_location_xing_user"
+        status: unpublished
+    location_xing7:
+        parent: "@location_xing"
+        name: "@operation_xing7->name"
+        operation: "@operation_xing7"
+        locationModule: "@module_config_location_xing_user"
+        status: unpublished
+    location_xing8:
+        parent: "@location_xing"
+        name: "@operation_xing8->name"
+        operation: "@operation_xing8"
+        locationModule: "@module_config_location_xing_user"
+        status: unpublished
+    location_xing9:
+        parent: "@location_xing"
+        name: "@operation_xing9->name"
+        operation: "@operation_xing9"
+        locationModule: "@module_config_location_xing_user"
+        status: unpublished
+    location_xing10:
+        parent: "@location_xing"
+        name: "@operation_xing10->name"
+        operation: "@operation_xing10"
+        locationModule: "@module_config_location_xing_user"
+        status: unpublished
+    location_xing11:
+        parent: "@location_xing"
+        name: "@operation_xing11->name"
+        operation: "@operation_xing11"
+        locationModule: "@module_config_location_xing_user"
+        status: unpublished
+    location_xing12:
+        parent: "@location_xing"
+        name: "@operation_xing12->name"
+        operation: "@operation_xing12"
+        locationModule: "@module_config_location_xing_user"
+        status: unpublished
+    location_xing13:
+        parent: "@location_xing"
+        name: "@operation_xing13->name"
+        operation: "@operation_xing13"
+        locationModule: "@module_config_location_xing_user"
+        status: unpublished
+    location_xing14:
+        parent: "@location_xing"
+        name: "@operation_xing14->name"
+        operation: "@operation_xing14"
+        locationModule: "@module_config_location_xing_user"
+        status: unpublished
+    location_xing15:
+        parent: "@location_xing"
+        name: "@operation_xing15->name"
+        operation: "@operation_xing15"
+        locationModule: "@module_config_location_xing_user"
+        status: unpublished
+    location_xing16:
+        parent: "@location_xing"
+        name: "@operation_xing16->name"
+        operation: "@operation_xing16"
+        locationModule: "@module_config_location_xing_user"
+        status: unpublished
+    location_xing17:
+        parent: "@location_xing"
+        name: "@operation_xing17->name"
+        operation: "@operation_xing17"
+        locationModule: "@module_config_location_xing_user"
+        status: unpublished
+    location_xing18:
+        parent: "@location_xing"
+        name: "@operation_xing18->name"
+        operation: "@operation_xing18"
+        locationModule: "@module_config_location_xing_user"
+        status: unpublished
+    location_xing19:
+        parent: "@location_xing"
+        name: "@operation_xing19->name"
+        operation: "@operation_xing19"
+        locationModule: "@module_config_location_xing_user"
+        status: unpublished
+    location_xing20:
+        parent: "@location_xing"
+        name: "@operation_xing20->name"
+        operation: "@operation_xing20"
+        locationModule: "@module_config_location_xing_user"
+        status: unpublished
+    location_xing21:
+        parent: "@location_xing"
+        name: "@operation_xing21->name"
+        operation: "@operation_xing21"
+        locationModule: "@module_config_location_xing_user"
+        status: unpublished
+    location_xing22:
+        parent: "@location_xing"
+        name: "@operation_xing22->name"
+        operation: "@operation_xing22"
+        locationModule: "@module_config_location_xing_user"
+        status: unpublished
+    location_xing23:
+        parent: "@location_xing"
+        name: "@operation_xing23->name"
+        operation: "@operation_xing23"
+        locationModule: "@module_config_location_xing_user"
+        status: unpublished
+    location_xing24:
+        parent: "@location_xing"
+        name: "@operation_xing24->name"
+        operation: "@operation_xing24"
+        locationModule: "@module_config_location_xing_user"
+        status: unpublished
+    location_xing25:
+        parent: "@location_xing"
+        name: "@operation_xing25->name"
+        operation: "@operation_xing25"
+        locationModule: "@module_config_location_xing_user"
+        status: unpublished
+    location_xing26:
+        parent: "@location_xing"
+        name: "@operation_xing26->name"
+        operation: "@operation_xing26"
+        locationModule: "@module_config_location_xing_user"
+        status: unpublished
+    location_xing27:
+        parent: "@location_xing"
+        name: "@operation_xing27->name"
+        operation: "@operation_xing27"
+        locationModule: "@module_config_location_xing_user"
+        status: unpublished
+    location_xing28:
+        parent: "@location_xing"
+        name: "@operation_xing28->name"
+        operation: "@operation_xing28"
+        locationModule: "@module_config_location_xing_user"
+        status: unpublished
+    location_xing29:
+        parent: "@location_xing"
+        name: "@operation_xing29->name"
+        operation: "@operation_xing29"
+        locationModule: "@module_config_location_xing_user"
+        status: unpublished
+    location_xing30:
+        parent: "@location_xing"
+        name: "@operation_xing30->name"
+        operation: "@operation_xing30"
         locationModule: "@module_config_location_xing_user"
         status: unpublished

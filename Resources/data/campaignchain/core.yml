@@ -13,7 +13,7 @@
 # limitations under the License.
 
 \CampaignChain\CoreBundle\Entity\System:
-    system (template):
+    system:
         package: campaignchain/campaignchain-ce
         name: CampaignChain Community Edition
         version: dev-master
@@ -40,8 +40,8 @@
     fos_user_user:
         username: admin
         usernameCanonical: admin
-        email: admin@example.com
-        emailCanonical: admin@example.com
+        email: admin\@example.com
+        emailCanonical: admin\@example.com
         firstName: <firstName()>
         lastName: <lastName()>
         enabled: 1
@@ -52,8 +52,8 @@
     fos_user_user{1..5}:
         username: user<current()>
         usernameCanonical: user<current()>
-        email: user<current()>@example.com
-        emailCanonical: user<current()>@example.com
+        email: user<current()>\@example.com
+        emailCanonical: user<current()>\@example.com
         firstName: <firstName()>
         lastName: <lastName()>
         enabled: 1
@@ -290,17 +290,17 @@
         name: Corporate Facebook Account
         channelModule: "@module_config_channel_facebook"
         status: active
-        trackingId: <md5()>
+        trackingId: <md5("foo")>
     channel_twitter:
         name: Corporate Twitter Account
         channelModule: "@module_config_channel_twitter"
         status: active
-        trackingId: <md5()>
+        trackingId: <md5("foo")>
     channel_linkedin:
         name: Corporate Linkedin Account
         channelModule: "@module_config_channel_linkedin"
         status: active
-        trackingId: <md5()>
+        trackingId: <md5("foo")>
     channel_website:
         name: Corporate Website
         channelModule: "@module_config_channel_website"
@@ -389,7 +389,7 @@
     location_mailchimp:
         name: Corporate Newsletters
         identifier: 38978934
-        #image: https://secure.gravatar.com/avatar/5851b55378d87459c61817edbc6768e0.jpg?s=300&d=https%3A%2F%2Fcdn-images.mailchimp.com%2Ficons%2Fletter-avatars%2Fa.png
+        #image: "https://secure.gravatar.com/avatar/5851b55378d87459c61817edbc6768e0.jpg?s=300"
         locationModule: "@module_config_location_mailchimp_user"
         channel: "@channel_mailchimp"
         status: active
@@ -424,8 +424,8 @@
         firstName: Amariki
         lastName: Test One
         gender: female
-        email: test1@amariki.com
-        emailVerified: test1@amariki.com
+        email: test1\@amariki.com
+        emailVerified: test1\@amariki.com
         profileUrl: https://www.facebook.com/profile.php?id=100008922632416
         profileImageUrl: https://graph.facebook.com/100008922632416/picture?width=150&height=150
         coverInfoUrl: https://graph.facebook.com/100008922632416?fields=cover
@@ -437,8 +437,8 @@
         firstName: Amariki
         lastName: Test Two
         gender: female
-        email: test2@amariki.com
-        emailVerified: test2@amariki.com
+        email: test2\@amariki.com
+        emailVerified: test2\@amariki.com
         profileUrl: https://www.facebook.com/profile.php?id=100008874400259
         profileImageUrl: https://graph.facebook.com/100008874400259/picture?width=150&height=150
         coverInfoUrl: https://graph.facebook.com/100008874400259?fields=cover
@@ -490,7 +490,7 @@
         identifier: 7399138589491308549
         displayName: Amariki Webinars
         firstName: Amariki
-        email: test1@amariki.com
+        email: test1\@amariki.com
 
 \CampaignChain\Location\MailChimpBundle\Entity\MailChimpUser:
     location_mailchimp_user1:
@@ -500,9 +500,9 @@
         displayName: Amariki Software
         firstName: Amariki
         lastName: Software
-        email: test1@amariki.com
+        email: test1\@amariki.com
         websiteUrl: http://www.amariki.com
-        profileImageUrl: https://secure.gravatar.com/avatar/5851b55378d87459c61817edbc6768e0.jpg?s=300&d=https%3A%2F%2Fcdn-images.mailchimp.com%2Ficons%2Fletter-avatars%2Fa.png
+        profileImageUrl: "https://secure.gravatar.com/avatar/5851b55378d87459c61817edbc6768e0.jpg?s=300"
 
 \CampaignChain\Location\SlideShareBundle\Entity\SlideShareUser:
     location_slideshare_user1:
@@ -518,7 +518,7 @@
         displayName: CEO on XING
         firstName: Duke
         lastName: Ellington
-        email: duke@example.com
+        email: duke\@example.com
         profileUrl: https://www.xing.com/profile/Amariki_Test
         profileImageUrl: https://www.xing.com/assets/frontend_minified/img/users/nobody_m.192x192.jpg
 
